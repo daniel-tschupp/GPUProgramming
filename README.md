@@ -19,7 +19,6 @@ The following prerequisits are mandatory to run the code in this repo:
 *	It may be neccessary to add cuda to PWD
 
 ### CUDA and Driver overview
-[<img src="https://gitlab.ti.bfh.ch/optoLab/gpu_algorithms/raw/master/installSettings/CudaToolVersionDriverOverview.png">]()
 
 Installing specific drivers using the PPA:
 *	sudo add-apt-repository ppa:graphics-drivers/ppa
