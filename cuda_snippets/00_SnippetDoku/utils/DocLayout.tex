@@ -1,0 +1,41 @@
+% Document settings:
+%---------------------------------------------------------------------------
+
+
+% table of content settings:
+\settocdepth{subsubsection}						% Set depth of toc
+\pagenumbering{roman}														
+
+%---------------------------------------------------------------------------
+% Set up header and footer
+%---------------------------------------------------------------------------
+\makeatletter
+\patchcmd{\@fancyhead}{\rlap}{\color{bfhgrey}\rlap}{}{}		% new color of header
+\patchcmd{\@fancyfoot}{\rlap}{\color{bfhgrey}\rlap}{}{}		% new color of footer
+\makeatother
+
+\fancyhf{}										% clean all fields
+\pagestyle{fancy}
+\fancypagestyle{plain}{							% new definition of plain style	
+	\lhead{\footnotesize \division}
+	\chead{\footnotesize \leftmark}
+	\rhead{\includegraphics[scale=\bannerSizeFactor]{\banner}}
+	\lfoot{\footnotesize \date}
+	\cfoot{\footnotesize \author}
+	\rfoot{\footnotesize \thepage}
+	\renewcommand{\chaptermark}[1]{\markboth{\thechapter. {\slshape{##1}}}{}}
+}
+\fancypagestyle{toc}{
+	\fancyhead[C]{\contentsname}
+	\fancyfoot[R]{\thepage}
+}
+
+
+%\renewcommand{\chaptermark}[1]{\markright{\thechapter\ #1}}
+%\renewcommand{\chaptermark}[1]{\markboth{\thechapter.  #1}{}}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\headrulewidth}{0pt}				% no header stripline
+\renewcommand{\footrulewidth}{0pt} 				% no bottom stripline
+
+\pagestyle{plain}
+%---------------------------------------------------------------------------

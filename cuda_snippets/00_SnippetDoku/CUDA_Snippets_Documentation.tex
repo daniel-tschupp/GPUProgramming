@@ -1,0 +1,83 @@
+%
+% Main document
+% ===========================================================================
+% This document is in UTF-8 coded, please remain in this encoding.
+
+% Default header
+\input{utils/Header.tex}					% Need no changing
+
+\def\doctitle{CUDA Snippet Documentation}
+\def\subtitle{GPU Acceleration Programming}
+\def\division{HuCE - OptoLab}
+\def\author{Daniel Tschupp}
+\def\date{10.04.19}
+\def\actualVersion{1.0}						% if version control is used --> update it!
+%\def\banner{imgs/BFH_TI_DE.png}			% Use Big BFH - Logo (recomended Sizefactor: 0.3)
+\def\banner{imgs/BFH_Logo_B.png}			% Use Small BFH - Logo (recomended Sizefactor: 0.5)
+\def\bannerSizeFactor{0.5}					% Finetune the size of the BFH - Logo
+
+\def\titlepicpath{imgs/CUDA_Titleimage.jpg}
+\def\titlepicsize{0.6\textwidth}
+\def\secondBeamPos{143.5}					% norm value for standartisation: 138.5
+\def\titlePosY{115mm}						% norm value for standartisation: 115mm
+\def\VersionControlPosY{220}
+%\def\TitlePageFooter{Berner Fachhochschule | Haute école spécialisée bernoise | Bern University of Applied Sciences}
+\def\TitlePageFooter{Bern University of Applied Sciences}
+% Intro:
+%---------------------------------------------------------------------------
+
+\addto\captionsngerman{					% Replace "english" with the language you use
+	\renewcommand{\contentsname}		%
+	{Table of Content}					% Title of Table of Content
+}
+\addto\captionsngerman{					% Replace "english" with the language you use
+	\renewcommand{\figurename}
+	{Fig.}		
+}
+
+\begin{document}                            % Start Document
+\input{utils/DocLayout.tex}
+
+% Title Page, Abstract, Acknowledgement, and table of content
+%---------------------------------------------------------------------------
+\include{chapters/TitlepageWithPicture}	% activate for Titelseite mit Bild
+\include{utils/VersionControl}
+
+\cleardoubleemptypage		% no Footer in empty back sheet
+
+%% Configure Table of Content
+\pagenumbering{Roman}
+\setcounter{page}{1}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
+%\addtocontents{toc}{~\hfill\textbf{Page}\par}	% create a Page text above the page numbers
+
+%\include{utils/Acknowledgement}	
+%\include{utils/Abstract}
+		
+\tableofcontents
+\cleardoubleemptypage		% no Footer in empty back sheet
+\pagenumbering{arabic}
+\color{black}				% color of written text
+
+%---------------------------------------------------------------------------
+% Main documentaion part:
+%---------------------------------------------------------------------------
+\include{chapters/GPUArch}		% Example for including files
+\include{chapters/Snippets}
+
+%---------------------------------------------------------------------------
+% Everething else
+%---------------------------------------------------------------------------
+\pagenumbering{Roman}
+\setcounter{page}{1}	% Define From where the latin page numbering has to continue
+%\include{utils/DeclarationOfAuthorship}
+
+\include{utils/Bibliography}
+%\include{utils/ListOfFigures}
+%\include{utils/ListOfTables}
+\include{utils/Glossary}
+%\include{utils/Appendix}
+%---------------------------------------------------------------------------
+\end{document}
+

@@ -1,0 +1,19 @@
+Device name: 	Quadro P1000
+
+Clock Rate: 	1.5185MHz
+Number of SMs: 	4
+Number of Cuncurrent Kernels: 	1
+Warp Size: 	32
+Total Global Memory: 	4.23304 GBytes
+Total Constant Memory: 	65.536kBytes
+
+Shared Memory per Block: 	49.152 kBytes
+Memory Pitch: 	2147483647
+Max Threads per Block: 	1024
+Max Threads per Block in X: 	1024
+Max Threads per Block in Y: 	1024
+Max Threads per Block in Z: 	64
+
+Max Blocks per Grid in X: 	2147483647
+Max Blocks per Grid in Y: 	65535
+Max Blocks per Grid in Z: 	65535

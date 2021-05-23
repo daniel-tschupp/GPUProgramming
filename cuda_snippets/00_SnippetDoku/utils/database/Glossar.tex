@@ -1,0 +1,95 @@
+
+%\newglossary[glg]{cudaglossary}{gcu}{gtn}{Glossary} 
+
+
+%\makenoidxglossaries
+
+\newglossaryentry{rowmajor}
+{
+	%type=cudaglossary,
+	name={row major},
+	description={Row major means that the different rows of an
+		matrix is stored sequencial in a 1d array.}
+}
+
+\newglossaryentry{coalesces}
+{
+	%type=cudaglossary,
+	name={coalesces},
+	description={ Coalesces means that memory is sequencial order (N, N+1, N+2...)}
+}
+
+\newglossaryentry{DRAMBursts}
+{
+	%type=cudaglossary,
+	name={DRAM bursts},
+	description={DRAM bursts are multiple data transfers from DRAM grouped together. }
+}
+
+\newglossaryentry{cornerTuning}
+{
+	%type=cudaglossary,
+	name={corner turning},
+	description={Technique used to make efficient memory accesses. }
+}
+
+\newglossaryentry{interleavedDataDistribution}
+{
+	%type=cudaglossary,
+	name={interleaved data distribution},
+	description={Storing data in separate groups in the memory to use differen banks when accesing the data. }
+}
+
+\newglossaryentry{controlFlow}
+{
+	%type=cudaglossary,
+	name={control flow},
+	description={The control flow is the program execution path of control structures like loops and branches. }
+}
+
+\newglossaryentry{threadDivergence}
+{
+	%type=cudaglossary,
+	name={Thread Divergence},
+	description={Threads of a warp may diverge when they follow different control flows. }
+}
+
+\newglossaryentry{warpPadding}
+{
+	%type=cudaglossary,
+	name={warp padding},
+	description={If the data isn't a multiple of the warp size the last warp will be filled regardlessly with threads. That's called padding of warps. }
+}
+
+\newglossaryentry{boundaryConditions}
+{
+	%type=cudaglossary,
+	name={boundary conditions},
+	description={If the data isn't a multiple of the warp size there will be some pading threads that would access the wrong data. Boundary conditions prohibits that. }
+}
+
+\newglossaryentry{host}
+{
+	%type=cudaglossary,
+	name={host},
+	description={ Host always relates to the CPU that lauches the kernels. }
+}
+
+\newglossaryentry{device}
+{
+	%type=cudaglossary,
+	name={device},
+	description={Device always relates to the GPU that executes the kernels.. }
+}
+
+\newacronym{DRAM}{DRAM}{Dynamic Random Access Memory}
+\newacronym{GDDRSDRAM}{GDDR SDRAM}{Graphical Double Data Rate - Synchronous Dynamic Random Access Memory}
+\newacronym{CUDA}{CUDA}{Compute Unified Device Architecture}
+\newacronym{SIMD}{SIMD}{Single Instruction Multiple Data}
+\newacronym{GPU}{GPU}{Graphical Processing Unit}
+\newacronym{CPU}{CPU}{Central Processing Unit}
+\newacronym{SM}{SM}{Streaming Multiprocessor}
+\newacronym{PU}{PU}{Processing Unit}
+\newacronym{FPU}{FPU}{Floating Point Unit}
+
+

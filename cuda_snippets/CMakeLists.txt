@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.10)
+
+project(CudaSnippets)
+
+add_subdirectory(01_HelloWorld)
+add_subdirectory(02_CreateRandomMatrixFile)
+add_subdirectory(03_matricCalc)
+add_subdirectory(04_SystemInfo)
+add_subdirectory(05_matricCalcBlocks)
+add_subdirectory(06_matricCalcBlocksSM)
+add_subdirectory(07_constantMemory)
+add_subdirectory(08_optimSubtraction)
+add_subdirectory(09_MemoryPaging)
+add_subdirectory(10_SimpleAsyncStream)
+add_subdirectory(11_AsyncStreamClass)
+add_subdirectory(12_AsyncStreamClassImproved)
+add_subdirectory(13_ProperCudaErrorHandling)
+add_subdirectory(14_PCI_BW_Test)
+
+add_subdirectory(99_compareMatMulKernels)
+
+

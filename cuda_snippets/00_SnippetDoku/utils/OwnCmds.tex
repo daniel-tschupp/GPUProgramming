@@ -1,0 +1,71 @@
+% Create own commmands here:
+
+% neue Enviroments für Einrückungen
+\newenvironment{skip1cm}{\par\leftskip=1cm}{\par\leftskip=2cm}
+\newenvironment{skip2cm}{\par\leftskip=2cm}{\par\leftskip=2cm}
+\newenvironment{skip3cm}{\par\leftskip=3cm}{\par\leftskip=2cm}
+
+% Cmd für Spaltenvektoren: colvec{Anz}{Val1}{Val2}...
+\newcount\colveccount
+\newcommand*\colvec[1]{
+        \global\colveccount#1
+        \begin{pmatrix}
+        \colvecnext
+}
+\def\colvecnext#1{
+        #1
+        \global\advance\colveccount-1
+        \ifnum\colveccount>0
+                \\
+                \expandafter\colvecnext
+        \else
+                \end{pmatrix}
+        \fi
+}
+
+% Cmd für das Fourier F (im Math-Mode benutzen)
+\newcommand{\Fourier}{\mathlarger{\mathlarger{\mathfrak{F}}}}
+
+% Cmd für das Laplace L (im Math-Mode benutzen)
+\newcommand{\Laplace}{\mathlarger{\mathlarger{\mathfrak{L}}}}
+
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{numb}{magenta!60!black}
+
+\lstdefinelanguage{json}{
+    basicstyle=\normalfont\ttfamily,
+    numbers=left,
+    numberstyle=\scriptsize,
+    stepnumber=1,
+    numbersep=8pt,
+    showstringspaces=false,
+    breaklines=true,
+    frame=lines,
+    backgroundcolor=\color{background},
+    string=[s]{"}{"},
+    stringstyle=\color{blue},
+    comment=[s]{//},
+    commentstyle=\color{green},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {:}{{{\color{punct}{:}}}}{1}
+      {,}{{{\color{punct}{,}}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
+}
+
+
+\newcommand{\includecode}[2]{\lstinputlisting[language=#1]{#2}}
