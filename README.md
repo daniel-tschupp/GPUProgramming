@@ -1,8 +1,14 @@
-# GPU Programming with CUDA
+# GPU accelerated OCT algorithms
 
-This Repo includes a brief documentation that explains the main topics when programming GPUs with CUDA. It furthermore contains example snippets of kernels and how to launch them for teaching perpose.
+As my first project in my master studies I successfully accelerated the oct processing chain on the GPU. A processing speed
+of 2.6GS/s was reached.
 
-At last it includes an GPU Acceleration Project for the OCT image processing.
+This repository contains the final report in a pdf form as well as the CUDA code and the C++ code using it.
+It can be found in the oct_algorithm_implementation folder.
+
+Further there are some cuda sample snippets that demonstrate the different techniques used in the project.
+
+If you want to run the code, please ensure the following requirements:
 
 ## Prerequisits
 The following prerequisits are mandatory to run the code in this repo:
@@ -24,31 +30,6 @@ Installing specific drivers using the PPA:
 *	Test installation via nvidia-settings (if it work --> dirver works)
 
 More infos can be found here: [How to install Nvidia Drivers](https://linuxconfig.org/how-to-install-the-nvidia-drivers-on-ubuntu-18-04-bionic-beaver-linux)
-
-### Add extend PWD
-Add the following lines .profile file if they don't already exist:
-
-if [ -d "$HOME/bin" ] ; then
-
-    PATH="$HOME/bin:$PATH"
-
-fi
-
-
-if [ -d "$HOME/.local/bin" ] ; then
-
-    PATH="$HOME/.local/bin:$PATH"
-
-fi
-
-if [-d "/usr/local/cuda-10.1/bin" ] ; then
-
-	PATH="/usr/local/cuda-10.1/bin:$PATH"
-
-	PATH="/usr/local/cuda-10.1/bin/includes:$PATH"
-
-fi
-
 
 ## Performance Analysis
 
